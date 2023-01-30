@@ -2,18 +2,18 @@ name: Android CI
 
 on:
   push:
-    branches: '*'
+    branches: [ master, main ]
   pull_request:
-    branches: '*'
+    branches: [ master, main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: set up JDK 11
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v2
       with:
         java-version: '11'
         distribution: 'adopt'
@@ -28,9 +28,9 @@ jobs:
   test:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: set up JDK 11
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v2
       with:
         java-version: '11'
         distribution: 'adopt'
